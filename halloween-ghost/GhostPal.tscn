@@ -1,0 +1,87 @@
+[gd_scene load_steps=13 format=3 uid="uid://daybeonkhwgtw"]
+
+[ext_resource type="Texture2D" uid="uid://b0vfl6yeq3uch" path="res://Graveyard/Bonus Character/Ghost_Idle.png" id="1_12iw1"]
+[ext_resource type="Script" path="res://ghost_pal.gd" id="1_t15w2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibg5v"]
+atlas = ExtResource("1_12iw1")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cnw3f"]
+atlas = ExtResource("1_12iw1")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xumsv"]
+atlas = ExtResource("1_12iw1")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3mxp"]
+atlas = ExtResource("1_12iw1")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4lyi8"]
+atlas = ExtResource("1_12iw1")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhxog"]
+atlas = ExtResource("1_12iw1")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uct7p"]
+atlas = ExtResource("1_12iw1")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqodx"]
+atlas = ExtResource("1_12iw1")
+region = Rect2(336, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_maoid"]
+animations = [{
+"frames": [{
+"duration": 1.3,
+"texture": SubResource("AtlasTexture_ibg5v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cnw3f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xumsv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l3mxp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4lyi8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhxog")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uct7p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uqodx")
+}],
+"loop": true,
+"name": &"Ghost_Idle",
+"speed": 8.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kgmrs"]
+
+[node name="Ghostly" type="CharacterBody2D"]
+script = ExtResource("1_t15w2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_maoid")
+animation = &"Ghost_Idle"
+frame_progress = 0.348128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_kgmrs")
